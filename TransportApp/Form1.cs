@@ -80,9 +80,9 @@ namespace TransportApp
 
                 dataGridView.Rows.Add(connection.From.Station.Name, connection.To.Station.Name, abfahrtszeit, ankuftszeit, dauerzeit);
             }
-            //
+            
         }
-
+        //note//
         private void ButtonSwitch_Click(object sender, EventArgs e)
         {
             string x;

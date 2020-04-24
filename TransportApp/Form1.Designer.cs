@@ -48,6 +48,7 @@
             this.Abfahrtszeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ankunftszeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dauer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonStboard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             // 
             // standortText
             // 
-            this.standortText.Location = new System.Drawing.Point(12, 88);
+            this.standortText.Location = new System.Drawing.Point(16, 88);
             this.standortText.Name = "standortText";
             this.standortText.Size = new System.Drawing.Size(172, 20);
             this.standortText.TabIndex = 1;
@@ -73,7 +74,7 @@
             // 
             this.standortLabel.AutoSize = true;
             this.standortLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.standortLabel.Location = new System.Drawing.Point(12, 72);
+            this.standortLabel.Location = new System.Drawing.Point(16, 72);
             this.standortLabel.Name = "standortLabel";
             this.standortLabel.Size = new System.Drawing.Size(47, 13);
             this.standortLabel.TabIndex = 2;
@@ -98,7 +99,7 @@
             // 
             // buttonSwitch
             // 
-            this.buttonSwitch.Location = new System.Drawing.Point(249, 81);
+            this.buttonSwitch.Location = new System.Drawing.Point(262, 81);
             this.buttonSwitch.Name = "buttonSwitch";
             this.buttonSwitch.Size = new System.Drawing.Size(57, 33);
             this.buttonSwitch.TabIndex = 5;
@@ -109,7 +110,7 @@
             // listBoxStandort
             // 
             this.listBoxStandort.FormattingEnabled = true;
-            this.listBoxStandort.Location = new System.Drawing.Point(12, 120);
+            this.listBoxStandort.Location = new System.Drawing.Point(16, 120);
             this.listBoxStandort.Name = "listBoxStandort";
             this.listBoxStandort.Size = new System.Drawing.Size(172, 147);
             this.listBoxStandort.TabIndex = 6;
@@ -117,9 +118,9 @@
             // 
             // buttonSuche
             // 
-            this.buttonSuche.Location = new System.Drawing.Point(238, 202);
+            this.buttonSuche.Location = new System.Drawing.Point(194, 202);
             this.buttonSuche.Name = "buttonSuche";
-            this.buttonSuche.Size = new System.Drawing.Size(79, 65);
+            this.buttonSuche.Size = new System.Drawing.Size(90, 65);
             this.buttonSuche.TabIndex = 8;
             this.buttonSuche.Text = "Suche";
             this.buttonSuche.UseVisualStyleBackColor = true;
@@ -157,7 +158,7 @@
             // 
             this.timePicker.CustomFormat = "HH:mm";
             this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePicker.Location = new System.Drawing.Point(199, 133);
+            this.timePicker.Location = new System.Drawing.Point(215, 133);
             this.timePicker.Name = "timePicker";
             this.timePicker.Size = new System.Drawing.Size(57, 20);
             this.timePicker.TabIndex = 13;
@@ -165,7 +166,7 @@
             // checkBoxAn
             // 
             this.checkBoxAn.AutoSize = true;
-            this.checkBoxAn.Location = new System.Drawing.Point(278, 170);
+            this.checkBoxAn.Location = new System.Drawing.Point(290, 170);
             this.checkBoxAn.Name = "checkBoxAn";
             this.checkBoxAn.Size = new System.Drawing.Size(39, 17);
             this.checkBoxAn.TabIndex = 14;
@@ -176,7 +177,9 @@
             // checkBoxAb
             // 
             this.checkBoxAb.AutoSize = true;
-            this.checkBoxAb.Location = new System.Drawing.Point(238, 170);
+            this.checkBoxAb.Checked = true;
+            this.checkBoxAb.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxAb.Location = new System.Drawing.Point(250, 170);
             this.checkBoxAb.Name = "checkBoxAb";
             this.checkBoxAb.Size = new System.Drawing.Size(39, 17);
             this.checkBoxAb.TabIndex = 15;
@@ -196,6 +199,7 @@
             this.Dauer});
             this.dataGridView.Location = new System.Drawing.Point(12, 292);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.Size = new System.Drawing.Size(546, 117);
             this.dataGridView.TabIndex = 16;
@@ -225,11 +229,23 @@
             this.Dauer.HeaderText = "Dauer";
             this.Dauer.Name = "Dauer";
             // 
+            // buttonStboard
+            // 
+            this.buttonStboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStboard.Location = new System.Drawing.Point(290, 202);
+            this.buttonStboard.Name = "buttonStboard";
+            this.buttonStboard.Size = new System.Drawing.Size(90, 65);
+            this.buttonStboard.TabIndex = 17;
+            this.buttonStboard.Text = "mögliche Verbindungen anzeigen";
+            this.buttonStboard.UseVisualStyleBackColor = true;
+            this.buttonStboard.Click += new System.EventHandler(this.ButtonStboard_Click);
+            // 
             // app
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 446);
+            this.ClientSize = new System.Drawing.Size(571, 426);
+            this.Controls.Add(this.buttonStboard);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.checkBoxAb);
             this.Controls.Add(this.checkBoxAn);
@@ -275,6 +291,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Abfahrtszeit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ankunftszeit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dauer;
+        private System.Windows.Forms.Button buttonStboard;
     }
 }
 
